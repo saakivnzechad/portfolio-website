@@ -1,0 +1,66 @@
+{
+  "page": {
+    "title": "Saakivnzechad: Данил Климов - Портфолио"
+  },
+  "header": {
+    "download_cv": "скачать cv ",
+    "aria_download_cv": "Скачать резюме в формате PDF"
+  },
+  "hero": {
+    "name": "Danil Klimov",
+    "role": "product-minded frontend/<br>fullstack разработчик"
+  },
+  "skills": {
+    "frontend_title": "Frontend",
+    "frontend_list": "react, ts, tailwind, perf, resp",
+    "backend_title": "Backend",
+    "backend_list": "Python, php, sql, api",
+    "uxui_title": "UX/UI",
+    "uxui_list": "figma, proto, prod-minded",
+    "method_title": "Method",
+    "method_list": "git, oop, clean code"
+  },
+  "contacts": {
+    "title": "Контакты",
+    "availability": "Доступен с пн-пт, 12:00-22:00 МСК",
+    "email_icon_alt": "Иконка электронной почты",
+    "email_aria": "Отправить email на sarthriles@gmail.com",
+    "email_desc": "Предпочтительный канал для детальных обсуждений.",
+    "telegram_icon_alt": "Иконка Telegram",
+    "telegram_link": "Telegram ",
+    "telegram_aria": "Связаться через Telegram",
+    "telegram_desc": "Для быстрой связи и оперативных вопросов.",
+    "github_icon_alt": "Иконка GitHub",
+    "github_link": "GitHub ",
+    "github_aria": "Посмотреть профиль на GitHub",
+    "github_desc": "Здесь вы найдете примеры моих работ и решений.",
+    "vk_icon_alt": "Иконка VK",
+    "vk_link": "ВКонтакте ",
+    "vk_aria": "Связаться через ВКонтакте",
+    "vk_desc": "Также доступен для связи во ВКонтакте."
+  },
+  "projects": {
+    "title": "Проекты",
+    "github_link_text": "GitHub ",
+    "ecommerce": {
+      "title": "E-commerce SPA",
+      "desc": "Full-stack E-commerce SPA (React, PHP API) с комплексной серверной логикой и адаптивным дизайном.",
+      "aria_label_github": "Посмотреть проект E-commerce SPA на GitHub"
+    },
+    "portfolio": {
+      "title": "Динамическое портфолио (архивное)",
+      "desc": "Адаптивное SPA-портфолио: дуальная архитектура (TS, GSAP), кастомный роутинг, локализация.",
+      "aria_label_github": "Посмотреть проект Dynamic Client Portfolio на GitHub"
+    },
+    "telegram_bot": {
+      "title": "Бот для доставки контента в Telegram",
+      "desc": "Telegram-бот для автопродаж: интеграция YooMoney API, безопасные платежи, FSM.",
+      "aria_label_github": "Посмотреть проект Telegram Content Delivery Bot на GitHub"
+    }
+  },
+  "footer": {
+    "lang_prefix": "язык:",
+    "lang_current": "ru",
+    "theme_prefix": "тема:"
+  }
+}
