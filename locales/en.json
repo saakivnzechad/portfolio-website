@@ -2,6 +2,10 @@
   "page": {
     "title": "Saakivnzechad: Danil Klimov - Portfolio"
   },
+  "seo": {
+    "description": "Product-Minded Frontend/Fullstack Developer with skills in React, TypeScript, PHP, Python. I create high-performance and scalable user-centric solutions. Experienced in e-commerce, interactive SPAs, and Telegram bot development.",
+    "keywords": "Frontend Developer, Fullstack Developer, React, TypeScript, PHP, Python, Tailwind CSS, Vite, E-commerce, SPA, Telegram Bot, Product-Minded, UI/UX, Git, Docker, Clean Code, SOLID"
+  },
   "header": {
     "download_cv": "download cv ",
     "aria_download_cv": "Download CV in PDF format"
