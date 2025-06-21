@@ -2,6 +2,10 @@
   "page": {
     "title": "Saakivnzechad: Данил Климов - Портфолио"
   },
+  "seo": {
+    "description": "Product-Minded Фронтенд/Фуллстек разработчик с навыками React, TypeScript, PHP, Python. Создаю высокопроизводительные и масштабируемые решения, ориентированные на пользователя. Опыт в e-commerce, интерактивных SPA и разработке Telegram-ботов.",
+    "keywords": "Фронтенд-разработчик, Фуллстек-разработчик, React, TypeScript, PHP, Python, Tailwind CSS, Vite, E-commerce, SPA, Telegram-бот, Product-Minded, UI/UX, Git, Docker, Чистый код, SOLID"
+  },
   "header": {
     "download_cv": "скачать cv ",
     "aria_download_cv": "Скачать резюме в формате PDF"
