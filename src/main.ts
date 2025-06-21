@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   themeManager.initialize();
 
   const languageManager = new LanguageManager({
-    localesPath: '/locales',
+    localesPath: '/portfolio-website/locales',
     defaultLanguage: 'en',
     languageToggleButtonSelector: '#lang-toggle',
     languageToggleButtonTextSelector: 'span:nth-of-type(2)',
