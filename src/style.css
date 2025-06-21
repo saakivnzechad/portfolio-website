@@ -1,0 +1,36 @@
+/*
+ * Copyright (c) 2025 Danil Klimov.
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@theme {
+    --font-base: 'IBM Plex Sans', sans-serif;
+    --base-width: 21.5rem;
+    --huge-width: 28.5rem;
+    --base-height: 28rem;
+    --huge-height: 24.4375rem;
+    --max-content-width: 102.25rem;
+
+    --color-accent: #000000;
+    --color-subaccent: #1F1F1F;
+    --color-secondary: #333333;
+    --color-background: #FFFFFF;
+    --hero-gradient: linear-gradient(121.754deg, #F6FBFD 0%, #EDF3F5 100%);
+    --shadow-base: 0 1px 2px rgba(0,0,0,0.05);
+    --shadow-footer: 0 -1px 2px rgba(0,0,0,0.05);
+
+    --color-accent-darkmode: #FFFFFF;
+    --color-subaccent-darkmode: #F0F0F0;
+    --color-secondary-darkmode: #DCDCDC;
+    --color-background-darkmode: #000000;
+    --hero-gradient-darkmode: linear-gradient(121.754deg, #191A1B 0%, #161819 100%);
+    --shadow-base-darkmode: 0 1px 2px rgba(255,255,255,0.05);
+    --shadow-footer-darkmode: 0 -1px 2px rgba(255,255,255,0.05);
+    
+}
