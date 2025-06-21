@@ -31,7 +31,7 @@ class LanguageManager {
 
   constructor(config: Partial<LanguageManagerConfig> = {}) {
     this.config = {
-      localesPath: config.localesPath ?? 'locales',
+      localesPath: config.localesPath ?? '/locales',
       defaultLanguage: config.defaultLanguage ?? 'en',
       languageToggleButtonSelector: config.languageToggleButtonSelector ?? null,
       languageToggleButtonTextSelector: config.languageToggleButtonTextSelector ?? null,
