@@ -3,68 +3,66 @@
     "title": "Saakivnzechad: Danil Klimov - Portfolio"
   },
   "seo": {
-    "description": "Product-Minded Frontend/Fullstack Developer with skills in React, TypeScript, PHP, Python. I create high-performance and scalable user-centric solutions. Experienced in e-commerce, interactive SPAs, and Telegram bot development.",
+    "description": "Product-minded Frontend/Fullstack Developer with expertise in React, TypeScript, PHP, and Python. I build high-performance, scalable, and user-centric solutions. Experienced in e-commerce, interactive SPAs, and Telegram bot development.",
     "keywords": "Frontend Developer, Fullstack Developer, React, TypeScript, PHP, Python, Tailwind CSS, Vite, E-commerce, SPA, Telegram Bot, Product-Minded, UI/UX, Git, Docker, Clean Code, SOLID"
   },
-  "header": {
-    "download_cv": "download cv ",
-    "aria_download_cv": "Download CV in PDF format"
+  "nav": {
+    "home": "Home",
+    "skills": "Skills",
+    "contacts": "Contacts",
+    "projects": "Projects"
   },
   "hero": {
     "name": "Danil Klimov",
-    "role": "product-minded frontend/<br>fullstack developer"
+    "download_cv": "Download CV",
+    "aria_download_cv": "Download resume in PDF format"
   },
   "skills": {
-    "frontend_title": "Frontend",
-    "frontend_list": "react, ts, tailwind, perf, resp",
-    "backend_title": "Backend",
-    "backend_list": "Python, php, sql, api",
-    "uxui_title": "UX/UI",
-    "uxui_list": "figma, proto, prod-minded",
-    "method_title": "Method",
-    "method_list": "git, oop, clean code"
+    "title": "Skills",
+    "description": "My core competencies and technical skills"
   },
   "contacts": {
     "title": "Contacts",
-    "availability": "Available Mon-Fri, 9:00-19:00 UTC",
+    "availability": "Available Mon-Fri, 12:00-22:00 MSK",
     "email_icon_alt": "Email icon",
+    "email_icon_aria_label": "Email icon",
+    "email_title": "Sarthriles@Gmail.com",
+    "email_desc": "Preferred channel for detailed discussions",
+    "email_button": "Write Email",
     "email_aria": "Send an email to sarthriles@gmail.com",
-    "email_desc": "Preferred channel for detailed discussions.",
     "telegram_icon_alt": "Telegram icon",
-    "telegram_link": "Telegram ",
-    "telegram_aria": "Contact via Telegram",
-    "telegram_desc": "For quick messages and inquiries.",
+    "telegram_icon_aria_label": "Telegram icon",
+    "telegram_title": "Telegram",
+    "telegram_desc": "For quick communication and urgent inquiries",
+    "telegram_button": "Write Message",
+    "telegram_aria": "Connect via Telegram",
     "github_icon_alt": "GitHub icon",
-    "github_link": "GitHub ",
-    "github_aria": "View profile on GitHub",
-    "github_desc": "Here you can find examples of my work and solutions.",
-    "vk_icon_alt": "VK icon",
-    "vk_link": "Vkontakte ",
-    "vk_aria": "Contact via Vkontakte",
-    "vk_desc": "Also available for contact on Vkontakte."
+    "github_icon_aria_label": "GitHub icon",
+    "github_title": "GitHub",
+    "github_desc": "Explore examples of my work and solutions here",
+    "github_button": "View Profile",
+    "github_aria": "View GitHub profile"
   },
   "projects": {
     "title": "Projects",
-    "github_link_text": "GitHub ",
+    "description": "My recent and relevant projects",
+    "github_link_text": "GitHub",
+    "github_icon_alt": "GitHub icon",
+    "github_icon_aria_label": "GitHub icon",
     "ecommerce": {
-      "title": "E-commerce SPA",
-      "desc": "A full-stack E-commerce SPA (React, PHP API) with complex server-side logic and responsive design.",
-      "aria_label_github": "View the E-commerce SPA project on GitHub"
+      "title": "E-Commerce SPA [Extensive]",
+      "desc": "Full-Stack SPA (React, PHP) featuring complex server-side logic and responsive design",
+      "aria_label_github": "View E-Commerce SPA project on GitHub"
     },
     "portfolio": {
-      "title": "Dynamic Portfolio (archived)",
-      "desc": "Responsive SPA portfolio: dual architecture (TS, GSAP), custom routing, localization.",
-      "aria_label_github": "View the Dynamic Client Portfolio project on GitHub"
+      "title": "Dynamic Portfolio",
+      "desc": "Responsive Client-Only SPA portfolio (TS): Dynamic architecture, custom routing, and localization",
+      "aria_label_github": "View Dynamic Portfolio project on GitHub"
     },
     "telegram_bot": {
-      "title": "Telegram Content Delivery Bot",
-      "desc": "Telegram bot for automated sales: YooMoney API integration, secure payments, FSM.",
-      "aria_label_github": "View the Telegram Content Delivery Bot project on GitHub"
+      "title": "Paid Content Telegram Bot",
+      "desc": "Telegram bot for automated sales: Yoomoney API integration, secure payments, FSM implementation",
+      "aria_label_github": "View Paid Content Telegram Bot project on GitHub"
     }
-  },
-  "footer": {
-    "lang_prefix": "lang:",
-    "lang_current": "en",
-    "theme_prefix": "theme:"
   }
 }
