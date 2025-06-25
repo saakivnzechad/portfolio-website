@@ -4,78 +4,80 @@
 
 # Personal Landing Page / Portfolio
 
-A Clean, Responsive, and Localized Static Website
+A Responsive and Localized Static Website
 
 ---
 
 ## Project Overview
 
-This repository hosts the source code for my personal landing page, designed as a minimalist yet highly functional online presence. Developed with a focus on **clean aesthetics, optimal performance, and user experience**, this project showcases my core frontend development skills in a pure web environment, without the overhead of JavaScript frameworks.
+This repository contains the source code for a personal landing page, designed to serve as an online presence. The project focuses on **functional design, user experience, and performance**. It demonstrates frontend development skills within a pure web environment, without reliance on extensive JavaScript frameworks.
 
-The site features a **fully responsive design** tailored for seamless viewing across all devices, from mobile phones to large desktop screens. It also includes a **dynamic dark/light theme switcher** and a **custom localization system** supporting multiple languages (currently Russian and English), providing a personalized experience for visitors. All content is managed through `.json` files, demonstrating a structured approach to content delivery and maintainability.
+The site incorporates a **responsive layout** implemented with Tailwind CSS, ensuring adaptability across various devices, from mobile phones to desktop displays. It includes a **custom localization system** supporting multiple languages (currently English and Russian), providing content in the user's preferred language. All content is managed through `.json` files, contributing to a structured approach to content delivery and maintainability.
 
-This project serves as a clear example of how a modern, performant, and accessible static website can be built efficiently using contemporary tools like Vite and Tailwind CSS, coupled with custom TypeScript logic for interactive elements.
+This project illustrates the development of a static website using contemporary tools such as Vite and Tailwind CSS, complemented by custom TypeScript logic for interactive elements.
 
 ---
 
 ## Features
 
-This landing page implements key features focused on user interaction and accessibility:
+This landing page integrates key features related to user interaction and site navigation:
 
-* **Responsive and Adaptive Design:** Built with **Tailwind CSS**, ensuring a clean, modern, and fully responsive layout that adapts gracefully to various screen sizes and orientations.
-* **Dynamic Theme Switching:** Users can toggle between **light and dark modes**, with the preference saved locally, providing a comfortable viewing experience based on their environment.
-* **Custom Localization System:** Implements a lightweight, pure **TypeScript** solution for dynamic content localization (Russian and English). Text content, including `title` and `aria-label` attributes, is loaded from external `.json` files, making content updates efficient and scalable.
-* **Modular TypeScript Structure:** Core functionalities like theme management and language switching are encapsulated in dedicated TypeScript classes (`ThemeManager.ts`, `LanguageManager.ts`), promoting maintainability and separation of concerns.
-* **Minimal JavaScript Footprint:** Achieves rich interactivity with a minimal amount of JavaScript, focusing on performance and fast load times.
-* **Vite Powered Development:** Leverages **Vite** for a blazing-fast development server and optimized production builds, ensuring a smooth developer experience and efficient deployment.
+* **Responsive Layout:** Implemented with **Tailwind CSS**, providing a responsive design that adjusts to various screen sizes and orientations.
+* **Navigation System:** Includes a **hamburger menu for mobile views** and a **desktop navigation bar**. This system facilitates smooth, scroll-to-section navigation across the site's content.
+* **Custom Localization System:** Utilizes a **TypeScript-based solution** for dynamic content localization (supporting English and Russian). Textual content, including attributes such as `title` and `aria-label`, is loaded from external `.json` files, aiding content updates.
+* **Modular TypeScript Structure:** Core functionalities, including language management (`LanguageManager.ts`), mobile menu control (`MobileMenuManager.ts`), and smooth scrolling (`ScrollManager.ts`), are organized into dedicated TypeScript classes to support maintainability and separation of concerns.
+* **Optimized Client-Side Logic:** Achieves interactive elements and contributes to load times with a **minimal JavaScript footprint**, prioritizing performance.
+* **Vite Integration:** Employs **Vite** as the build tool, which supports a development server and optimized production builds.
 
 ---
 
 ## Technologies Used
 
-This project is built using a modern and efficient tech stack:
+This project is developed using a set of modern and efficient technologies:
 
 ### Frontend:
 
-* **HTML5:** Structured and semantic markup.
-* **CSS3 / Tailwind CSS:** Utility-first CSS framework for rapid and consistent styling, including custom theme variables for light/dark modes.
-* **TypeScript:** For robust and maintainable client-side logic (theme switching, localization).
-* **Vite:** As a lightning-fast build tool, providing a rapid development experience and optimized production builds.
+* **HTML5:** Used for structuring the website content.
+* **CSS3 / Tailwind CSS:** A utility-first CSS framework for styling and layout.
+* **TypeScript:** Applied for client-side logic implementation.
+* **Vite:** Serves as the build tool for development and production.
 
 ---
 
 ## Code Highlights
 
-Reviewing the codebase demonstrates key implementation patterns and architectural decisions:
+The codebase demonstrates implementation patterns and architectural choices:
 
-* **`index.html`:** The main entry point, showcasing semantic HTML structure and the integration of `data-i18n` and `data-i18n-attr` attributes for dynamic content translation.
-* **`src/main.ts`:** The central script responsible for initializing `ThemeManager` and `LanguageManager`, demonstrating the application's core logic bootstrapping.
-* **`src/themeManager.ts`:** Implements the logic for toggling and persisting user theme preferences (light/dark mode) using local storage and CSS custom properties defined in `src/style.css`.
-* **`src/languageManager.ts`:** Handles the dynamic loading and application of localized content from JSON files (`/locales/*.json`), updating `textContent` and various attributes based on the selected language.
-* **`src/languageDetector.ts`:** Provides utility functions for detecting preferred language, setting current language, and subscribing to language changes, forming the backbone of the localization system.
-* **`src/style.css`:** Integrates Tailwind CSS and defines custom CSS variables for theme-specific colors and other design tokens, demonstrating a scalable approach to styling.
-* **`/locales/` directory:** Contains JSON files (e.g., `en.json`, `ru.json`) that define all translatable strings, showcasing a clear separation of content from code.
+* **`index.html`:** The main entry point, detailing the HTML structure and the integration of `data-i18n` and `data-i18n-attr` attributes for dynamic content translation.
+* **`src/main.ts`:** The primary script for application initialization, responsible for setting up `LanguageManager`, `MobileMenuManager`, and `ScrollManager`.
+* **`src/languageManager.ts`:** Manages the dynamic loading, application, and persistence of user language preferences from JSON files (`/locales/*.json`).
+* **`src/languageDetector.ts`:** Provides utility functions for detecting the preferred language and managing language change events.
+* **`src/style.css`:** Integrates Tailwind CSS and defines custom CSS variables, contributing to the site's styling and thematic consistency.
+* **`/locales/` directory:** Contains JSON files (e.g., `en.json`, `ru.json`) that define translatable strings, separating content from code.
 
 ---
 
 ## Screenshots
 
-To fully appreciate the design and responsiveness, here are the key sections you should capture:
+The following screenshots illustrate the project's layout and responsiveness:
 
-* **Desktop Page:** Show the main layout with contact and project sections.
-    ![Screenshot of Desktop Page](images/desktop-homepage.png)
-* **Dark Mode Example:** Showcase the site in dark mode.
-    ![Screenshot of Dark Mode](images/darkmode.png)
-* **Mobile Page:** Display the mobile-optimized layout.
-    ![Screenshot of Mobile Page](images/mobile-homepage.png)
-* **Language Switch Example:** (Optional, if you want to show the functionality) A screenshot showing the language toggle.
-    ![Screenshot of Language Switch](images/lang-switch.png)
+### Desktop View
+
+<img src="images/desktop-homepage.png" alt="Screenshot of Desktop Page" style="max-width: 100%; height: auto;">
+
+### Mobile View
+
+<img src="images/mobile-homepage.png" alt="Screenshot of Mobile Page" style="width: auto; max-height: 600px;">
+
+### Localization Example
+
+<img src="images/lang-switch.png" alt="Screenshot of Language Switch" style="max-width: 100%; height: auto;">
 
 ---
 
 ## Project Status
 
-This project is **actively maintained** and serves as my primary personal portfolio and online business card. It is designed to be a living showcase of my skills, with ongoing content updates and potential feature enhancements planned. This repository is a valuable resource for understanding my approach to building performant, accessible, and maintainable static web applications.
+This project is **actively maintained** and serves as a personal portfolio. It is intended as a showcase of development skills, with ongoing content updates and potential feature enhancements. This repository can be used to understand the approach to building static web applications.
 
 ---
 
@@ -88,19 +90,25 @@ To set up and run this project locally, follow these steps:
     git clone https://github.com/saakivnzechad/portfolio-website.git
     cd portfolio-website
     ```
-2.  **Install Node.js and npm/yarn/pnpm** (if you don't have them).
+2.  **Install Node.js and a package manager** (npm, yarn, or pnpm).
 3.  **Install dependencies:**
     ```bash
-    npm install 
+    npm install
+    # or yarn install
+    # or pnpm install
     ```
 4.  **Run the development server:**
     ```bash
     npm run dev
+    # or yarn dev
+    # or pnpm dev
     ```
     This will typically start a local server at `http://localhost:5173` (or similar).
 5.  **Build the production version (optional):**
     ```bash
     npm run build
+    # or yarn build
+    # or pnpm build
     ```
     This will generate the `dist` directory with optimized static assets.
 
@@ -108,7 +116,7 @@ To set up and run this project locally, follow these steps:
 
 ## Deployment
 
-This project can be easily deployed as a static site to platforms like GitHub Pages. Refer to the project's documentation on deploying Vite projects to GitHub Pages for detailed instructions.
+This project can be deployed as a static site to platforms such as GitHub Pages. Refer to the project's documentation on deploying Vite projects to GitHub Pages for instructions.
 
 ---
 

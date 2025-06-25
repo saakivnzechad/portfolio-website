@@ -8,168 +8,154 @@
 import { getCurrentLanguage, setLanguage, getSupportedLanguages, subscribeToLanguageChanges } from './languageDetector';
 
 interface Translations {
-  [key: string]: string | Translations;
+    [key: string]: string | Translations;
 }
 
 interface LanguageManagerConfig {
-  localesPath: string;
-  defaultLanguage: string;
-  languageToggleButtonSelector: string | null;
-  languageToggleButtonTextSelector: string | null;
-  contentContainerSelector?: string;
-  fadeDuration: number;
+    localesPath: string;
+    defaultLanguage: string;
+    languageToggleButtonSelector: string | null;
+    mobileLanguageToggleButtonSelector: string | null;
+    contentContainerSelector: string;
+    fadeDuration: number;
 }
 
 class LanguageManager {
-  private readonly config: LanguageManagerConfig;
-  private readonly rootElement: HTMLElement;
-  private readonly languageToggleButton: HTMLButtonElement | null;
-  private readonly languageToggleButtonTextSpan: HTMLSpanElement | null;
-  private readonly contentContainer: HTMLElement | null;
-  private translationsCache: Map<string, Translations> = new Map();
-  private currentLanguage: string;
+    private readonly config: LanguageManagerConfig;
+    private readonly rootElement: HTMLElement;
+    private readonly contentContainer: HTMLElement | null;
+    private readonly languageToggleButton: HTMLButtonElement | null;
+    private readonly mobileLanguageToggleButton: HTMLButtonElement | null;
 
-  constructor(config: Partial<LanguageManagerConfig> = {}) {
-    this.config = {
-      localesPath: config.localesPath ?? `${import.meta.env.BASE_URL}locales`,
-      defaultLanguage: config.defaultLanguage ?? 'en',
-      languageToggleButtonSelector: config.languageToggleButtonSelector ?? null,
-      languageToggleButtonTextSelector: config.languageToggleButtonTextSelector ?? null,
-      contentContainerSelector: config.contentContainerSelector ?? 'body',
-      fadeDuration: config.fadeDuration ?? 200
-    };
-    this.rootElement = document.documentElement;
-    this.languageToggleButton = this.config.languageToggleButtonSelector
-      ? document.querySelector<HTMLButtonElement>(this.config.languageToggleButtonSelector)
-      : null;
-    this.languageToggleButtonTextSpan = this.languageToggleButton && this.config.languageToggleButtonTextSelector
-      ? this.languageToggleButton.querySelector<HTMLSpanElement>(this.config.languageToggleButtonTextSelector)
-      : null;
-    this.contentContainer = this.config.contentContainerSelector
-      ? document.querySelector<HTMLElement>(this.config.contentContainerSelector)
-      : null;
-    this.currentLanguage = getCurrentLanguage();
-  }
+    private translationsCache: Map<string, Translations> = new Map();
+    private currentLanguage: string;
 
-  private async loadTranslations(lang: string): Promise<Translations> {
-    if (this.translationsCache.has(lang)) {
-      return this.translationsCache.get(lang)!;
-    }
-    try {
-      const response = await fetch(`${this.config.localesPath}/${lang}.json`);
-      if (!response.ok) {
-        throw new Error(`Failed to load translations for ${lang}`);
-      }
-      const translations = await response.json();
-      this.translationsCache.set(lang, translations);
-      return translations;
-    } catch (error) {
-      console.error('Error loading translations:', error);
-      if (lang !== this.config.defaultLanguage) {
-        return this.loadTranslations(this.config.defaultLanguage);
-      }
-      return {};
-    }
-  }
+    constructor(config: Partial<LanguageManagerConfig> = {}) {
+        this.config = {
+            localesPath: config.localesPath ?? '/locales',
+            defaultLanguage: config.defaultLanguage ?? 'en',
+            languageToggleButtonSelector: config.languageToggleButtonSelector ?? null,
+            mobileLanguageToggleButtonSelector: config.mobileLanguageToggleButtonSelector ?? null,
+            contentContainerSelector: config.contentContainerSelector ?? 'body',
+            fadeDuration: config.fadeDuration ?? 200
+        };
 
-  private getNestedTranslation(key: string, translations: Translations): string {
-    const parts = key.split('.');
-    let value: string | Translations = translations;
-    for (const part of parts) {
-      if (typeof value === 'object' && part in value) {
-        value = (value as Translations)[part];
-      } else {
-        return `[${key}]`;
-      }
-    }
-    return typeof value === 'string' ? value : `[INVALID_TYPE: ${key}]`;
-  }
-
-  private async applyTranslations(): Promise<void> {
-    if (this.contentContainer) {
-      this.contentContainer.style.transition = `opacity ${this.config.fadeDuration}ms ease-in-out`;
-      this.contentContainer.style.opacity = '0';
+        this.rootElement = document.documentElement;
+        this.contentContainer = this.config.contentContainerSelector ? document.querySelector<HTMLElement>(this.config.contentContainerSelector) : null;
+        this.languageToggleButton = this.config.languageToggleButtonSelector ? document.querySelector<HTMLButtonElement>(this.config.languageToggleButtonSelector) : null;
+        this.mobileLanguageToggleButton = this.config.mobileLanguageToggleButtonSelector ? document.querySelector<HTMLButtonElement>(this.config.mobileLanguageToggleButtonSelector) : null;
+        
+        this.currentLanguage = getCurrentLanguage();
     }
 
-    const translations = await this.loadTranslations(this.currentLanguage);
-    this.rootElement.lang = this.currentLanguage;
+    public async initialize(): Promise<void> {
+        await this.applyTranslations();
 
-    const elements = document.querySelectorAll('[data-i18n], [data-i18n-attr], title[data-i18n]');
-    elements.forEach(element => {
-      const i18nKey = element.getAttribute('data-i18n');
-      if (i18nKey) {
-        const text = this.getNestedTranslation(i18nKey, translations);
-
-        if (text.includes('<br>') || element.tagName === 'TITLE') {
-          element.innerHTML = text;
-        }
-        else if (element.children.length > 0) {
-          for (const node of Array.from(element.childNodes)) {
-            if (node.nodeType === 3 && node.textContent?.trim() !== '') {
-              node.textContent = text;
-              break;
-            }
-          }
-        }
-        else {
-          element.textContent = text;
-        }
-      }
-
-      const attrMapping = element.getAttribute('data-i18n-attr');
-      if (attrMapping) {
-        attrMapping.split(';').forEach(pair => {
-          const [attr, key] = pair.split(':');
-          if (attr && key) {
-            element.setAttribute(attr, this.getNestedTranslation(key, translations));
-          }
+        subscribeToLanguageChanges(async (newLang) => {
+            this.currentLanguage = newLang;
+            await this.applyTranslations();
         });
-      }
-    });
 
-    if (this.languageToggleButtonTextSpan) {
-      this.languageToggleButtonTextSpan.textContent = this.currentLanguage;
+        this.languageToggleButton?.addEventListener('click', () => this.toggleLanguage());
+        this.mobileLanguageToggleButton?.addEventListener('click', () => this.toggleLanguage());
     }
 
-    if (this.contentContainer) {
-      requestAnimationFrame(() => {
-        this.contentContainer!.style.opacity = '1';
-        setTimeout(() => {
-          if (this.contentContainer) {
-            this.contentContainer.style.transition = '';
-          }
-        }, this.config.fadeDuration);
-      });
+    public toggleLanguage(): void {
+        const supported = getSupportedLanguages();
+        const currentIndex = supported.indexOf(this.currentLanguage);
+        const nextIndex = (currentIndex + 1) % supported.length;
+        setLanguage(supported[nextIndex]);
     }
-  }
+    
+    private async applyTranslations(): Promise<void> {
+        if (this.contentContainer) {
+            this.contentContainer.style.transition = `opacity ${this.config.fadeDuration}ms ease-in-out`;
+            this.contentContainer.style.opacity = '0';
+            await new Promise(resolve => setTimeout(resolve, this.config.fadeDuration));
+        }
 
+        const translations = await this._loadTranslations(this.currentLanguage);
+        this.rootElement.lang = this.currentLanguage;
 
-  async initialize(): Promise<void> {
-    setLanguage(this.currentLanguage);
-    await this.applyTranslations();
-    subscribeToLanguageChanges(async (newLang) => {
-      this.currentLanguage = newLang;
-      await this.applyTranslations();
-    });
-    if (this.languageToggleButton) {
-      this.languageToggleButton.addEventListener('click', () => this.toggleLanguage());
+        const elements = document.querySelectorAll('[data-i18n], [data-i18n-attr]');
+        elements.forEach(element => {
+            this._updateElementText(element as HTMLElement, translations);
+            this._updateElementAttributes(element as HTMLElement, translations);
+        });
+        
+        this._updateButtonLabels();
+
+        if (this.contentContainer) {
+            requestAnimationFrame(() => {
+                this.contentContainer!.style.opacity = '1';
+                setTimeout(() => {
+                    if (this.contentContainer) {
+                        this.contentContainer.style.transition = '';
+                    }
+                }, this.config.fadeDuration);
+            });
+        }
     }
-  }
 
-  toggleLanguage(): void {
-    const supported = getSupportedLanguages();
-    const currentIndex = supported.indexOf(this.currentLanguage);
-    const nextIndex = (currentIndex + 1) % supported.length;
-    setLanguage(supported[nextIndex]);
-  }
+    private _updateElementText(element: HTMLElement, translations: Translations): void {
+        const i18nKey = element.getAttribute('data-i18n');
+        if (!i18nKey) return;
 
-  setLanguage(lang: string): void {
-    setLanguage(lang);
-  }
+        const text = this._getNestedTranslation(i18nKey, translations);
+        element.textContent = text;
+    }
 
-  getLanguage(): string {
-    return this.currentLanguage;
-  }
+    private _updateElementAttributes(element: HTMLElement, translations: Translations): void {
+        const attrMapping = element.getAttribute('data-i18n-attr');
+        if (!attrMapping) return;
+
+        attrMapping.split(';').forEach(pair => {
+            const [attr, key] = pair.split(':');
+            if (attr && key) {
+                element.setAttribute(attr, this._getNestedTranslation(key, translations));
+            }
+        });
+    }
+
+    private _updateButtonLabels(): void {
+        const newLabel = this.currentLanguage.toUpperCase();
+        [this.languageToggleButton, this.mobileLanguageToggleButton].forEach(button => {
+            const textSpan = button?.querySelector<HTMLSpanElement>('span:first-of-type');
+            if (textSpan) {
+                textSpan.textContent = newLabel;
+            }
+        });
+    }
+    
+    private async _loadTranslations(lang: string): Promise<Translations> {
+        if (this.translationsCache.has(lang)) {
+            return this.translationsCache.get(lang)!;
+        }
+        try {
+            const response = await fetch(`${this.config.localesPath}/${lang}.json`);
+            if (!response.ok) {
+                throw new Error(`Failed to load translations for ${lang}: ${response.statusText}`);
+            }
+            const translations = await response.json();
+            this.translationsCache.set(lang, translations);
+            return translations;
+        } catch (error) {
+            console.error('Error loading translations:', error);
+            if (lang !== this.config.defaultLanguage) {
+                return this._loadTranslations(this.config.defaultLanguage);
+            }
+            return {};
+        }
+    }
+
+    private _getNestedTranslation(key: string, translations: Translations): string {
+        return key.split('.').reduce((acc: any, part: string) => {
+            if (acc && typeof acc === 'object' && part in acc) {
+                return acc[part];
+            }
+            return null;
+        }, translations) ?? `[${key}]`;
+    }
 }
 
 export default LanguageManager;

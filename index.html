@@ -7,154 +7,232 @@
 
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="page.title">Saakivnzechad</title>
-  <meta name="description" data-i18n="seo.description">
-  <meta name="keywords" data-i18n="seo.keywords">
-  <meta name="author" content="Danil Klimov">
-  
-  <link rel="stylesheet" href="src/style.css">
-  <base href="/portfolio-website/">
-  <meta name="darkreader-lock">
-</head>
-<body class="font-base p-0 m-0 flex flex-col items-center justify-start bg-background dark:bg-background-darkmode uppercase min-h-screen xl:justify-between">
-  <header class="hidden h-16 w-full xl:flex flex-row items-start justify-end pt-4 px-4">
-    <a href="files/Danil_Klimov_CV.pdf" class="text-sm text-subaccent dark:text-subaccent-darkmode hover:text-secondary dark:hover:text-secondary-darkmode transition-all duration-150 ease-in-out delay-75" data-i18n="header.download_cv" data-i18n-attr="aria-label:header.aria_download_cv">скачать cv <span class="font-semibold leading-none font-mono lowercase">→</span></a>
-  </header>
-
-  <main class="w-full max-w-[var(--max-content-width)] flex flex-col items-center gap-16">
-    <section id="intro-section-mobile" class="w-full flex flex-col md:flex-row md:justify-between gap-8 px-4 py-12 sm:px-6 md:py-16 lg:px-24 lg:py-20 bg-(image:--hero-gradient) dark:bg-(image:--hero-gradient-darkmode) shadow-base dark:shadow-base-darkmode xl:hidden">
-      <div class="md:grow md:flex md:flex-col md:items-start md:justify-between">
-        <div class="flex flex-col gap-4">
-          <h1 class="font-normal text-4xl text-accent dark:text-accent-darkmode" data-i18n="hero.name">Danil Klimov</h1>
-          <h2 class="font-normal text-lg text-subaccent dark:text-subaccent-darkmode" data-i18n="hero.role">product-minded frontend/<br>fullstack developer</h2>
-        </div>
-        <a href="files/Danil_Klimov_CV.pdf" class="hidden md:block text-sm text-subaccent dark:text-subaccent-darkmode hover:text-secondary dark:hover:text-secondary-darkmode transition-all duration-150 ease-in-out delay-75 pt-8" data-i18n="header.download_cv" data-i18n-attr="aria-label:header.aria_download_cv">скачать cv <span class="font-semibold leading-none font-mono lowercase">→</span></a>
-      </div>
-      <ul class="flex flex-col gap-3">
-        <li class="flex flex-col gap-1">
-          <h3 class="text-xs font-light text-subaccent dark:text-subaccent-darkmode" data-i18n="skills.frontend_title">Frontend</h3>
-          <p class="text-base text-subaccent dark:text-subaccent-darkmode" data-i18n="skills.frontend_list">react, ts, tailwind, perf, resp</p>
-        </li>
-        <li class="flex flex-col gap-1">
-          <h3 class="text-xs font-light text-subaccent dark:text-subaccent-darkmode" data-i18n="skills.backend_title">Backend</h3>
-          <p class="text-base text-subaccent dark:text-subaccent-darkmode" data-i18n="skills.backend_list">Python, php, sql, api</p>
-        </li>
-        <li class="flex flex-col gap-1">
-          <h3 class="text-xs font-light text-subaccent dark:text-subaccent-darkmode" data-i18n="skills.uxui_title">Ux/Ui</h3>
-          <p class="text-base text-subaccent dark:text-subaccent-darkmode" data-i18n="skills.uxui_list">figma, proto, prod-minded</p>
-        </li>
-        <li class="flex flex-col gap-1">
-          <h3 class="text-xs font-light text-subaccent dark:text-subaccent-darkmode" data-i18n="skills.method_title">Method</h3>
-          <p class="text-base text-subaccent dark:text-subaccent-darkmode" data-i18n="skills.method_list">git, oop, clean code</p>
-        </li>
-      </ul>
-      <a href="files/Danil_Klimov_CV.pdf" class="block md:hidden text-sm text-subaccent dark:text-subaccent-darkmode hover:text-secondary dark:hover:text-secondary-darkmode transition-all duration-150 ease-in-out delay-75 pt-8" data-i18n="header.download_cv" data-i18n-attr="aria-label:header.aria_download_cv">скачать cv <span class="font-semibold leading-none font-mono lowercase">→</span></a>
-    </section>
-
-    <div class="w-full flex flex-col py-8 px-4 sm:px-6 md:py-12 pb-[12rem] md:pb-[8rem] xl:flex-row xl:justify-between xl:items-center xl:min-h-full xl:py-0 gap-16">
-      <section id="contacts-section" class="w-full flex flex-col gap-8 md:gap-6 xl:gap-8 xl:max-w-[var(--base-width)] xl:h-[var(--base-height)] 2xl:h-[var(--huge-height)] 2xl:max-w-[var(--huge-width)]">
-        <div class="flex flex-col gap-2 md:flex-row md:justify-between xl:flex-col xl:items-start xl:justify-start">
-          <h2 class="text-lg text-accent dark:text-accent-darkmode" data-i18n="contacts.title">Контакты</h2>
-          <p class="text-base text-secondary dark:text-secondary-darkmode" data-i18n="contacts.availability">Доступен с пн-пт, 9:00-20:00 UTC</p>
-        </div>
-        <ul class="flex flex-col gap-6 xl:h-full xl:gap-0 xl:justify-between">
-          <li class="flex flex-col gap-3 sm:pl-2">
-            <div class="flex flex-row items-center gap-3">
-              <img src="icons/mail-icon-sm.svg" alt="Email icon" class="w-4 h-4 dark:brightness-700" loading="lazy" data-i18n-attr="alt:contacts.email_icon_alt"> <a href="mailto:sarthriles@gmail.com" class="text-base text-subaccent dark:text-subaccent-darkmode hover:text-secondary dark:hover:text-secondary-darkmode transition-all duration-150 ease-in-out delay-75" data-i18n-attr="aria-label:contacts.email_aria">sarthriles@gmail.com <span class="font-semibold leading-none font-mono lowercase">→</span></a>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title data-i18n="page.title">Saakivnzechad</title>
+      <meta name="description" data-i18n="seo.description">
+      <meta name="keywords" data-i18n="seo.keywords">
+      <meta name="author" content="Danil Klimov">
+      <link rel="stylesheet" href="src/style.css">
+      <base href="/portfolio-website/">
+      <meta name="darkreader-lock">
+      <meta name="theme-color" content="#2D3C4C">
+   </head>
+   <body class="flex min-w-[19.05rem] flex-col items-center justify-start bg-background-base p-0 font-base text-base scroll-smooth will-change-scroll">
+      <header class="fixed z-50 flex w-full items-center justify-center bg-[image:var(--gradient-header-footer)] shadow-header">
+         <nav class="relative z-50 container flex max-w-5xl flex-row items-center justify-start px-4 py-4 sm:justify-between sm:px-6 sm:py-6">
+            <ul class="hidden flex-row items-center gap-4 text-center font-medium sm:flex">
+               <li>
+                  <a href="#main" class="text-text-secondary transition-colors hover:text-text-accent" data-i18n="nav.home">Главная</a>
+               </li>
+               <span class="block h-3.5 w-0.5 rounded-full bg-divider-navigation" aria-hidden="true"></span>
+               <li>
+                  <a href="#skills" class="text-text-secondary transition-colors hover:text-text-accent" data-i18n="nav.skills">Навыки</a>
+               </li>
+               <span class="block h-3.5 w-0.5 rounded-full bg-divider-navigation" aria-hidden="true"></span>
+               <li>
+                  <a href="#contacts" class="text-text-secondary transition-colors hover:text-text-accent" data-i18n="nav.contacts">Контакты</a>
+               </li>
+               <span class="block h-3.5 w-0.5 rounded-full bg-divider-navigation" aria-hidden="true"></span>
+               <li>
+                  <a href="#projects" class="text-text-secondary transition-colors hover:text-text-accent" data-i18n="nav.projects">Проекты</a>
+               </li>
+            </ul>
+            <button class="hidden cursor-pointer items-center gap-2 sm:flex" id="lang-toggle" aria-label="Toggle language">
+            <span class="text-text-secondary font-medium uppercase transition-colors hover:text-text-accent">RU</span>
+            <span class="block h-3.5 w-0.5 rounded-full bg-divider-navigation" aria-hidden="true"></span>
+            </button>
+            <button class="z-60 block rounded-full bg-button-base px-4 py-2.5 shadow-button-general-base transition hover:bg-button-hover active:bg-button-active active:shadow-button-general-active sm:hidden" id="hamburger-button" aria-label="Open mobile menu">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" fill="none" viewBox="0 0 64 56">
+                  <path fill="#DDD" d="M58.3529 22.4C61.4717 22.4 64 24.9072 64 28c0 3.0928-2.5283 5.6-5.6471 5.6H5.6471C2.5283 33.6 0 31.0928 0 28c0-3.0928 2.5283-5.6 5.647-5.6h52.706Zm0 22.4C61.4717 44.8 64 47.3072 64 50.4c0 3.0928-2.5283 5.6-5.6471 5.6H5.6471C2.5283 56 0 53.4928 0 50.4c0-3.0928 2.5283-5.6 5.647-5.6h52.706Zm0-44.8C61.4717 0 64 2.5072 64 5.6c0 3.0928-2.5283 5.6-5.6471 5.6H5.6471C2.5283 11.2 0 8.6928 0 5.6 0 2.5072 2.5283 0 5.647 0h52.706Z" />
+               </svg>
+            </button>
+            <nav class="mobile-menu absolute left-0 top-16.5 z-40 hidden h-fit w-full -translate-y-full transform bg-[image:var(--gradient-header-footer)] px-4 py-8 shadow-header transition-transform duration-300 ease-out will-change-transform" id="mobile-menu">
+               <ul class="flex flex-col gap-6">
+                  <li>
+                     <a href="#main" class="text-text-secondary transition-colors hover:text-text-accent" data-i18n="nav.home">Главная</a>
+                  </li>
+                  <li>
+                     <a href="#skills" class="text-text-secondary transition-colors hover:text-text-accent" data-i18n="nav.skills">Навыки</a>
+                  </li>
+                  <li>
+                     <a href="#contacts" class="text-text-secondary transition-colors hover:text-text-accent" data-i18n="nav.contacts">Контакты</a>
+                  </li>
+                  <li>
+                     <a href="#projects" class="text-text-secondary transition-colors hover:text-text-accent" data-i18n="nav.projects">Проекты</a>
+                  </li>
+               </ul>
+               <button class="mt-12 flex cursor-pointer items-center gap-2" id="lang-toggle-mobile" aria-label="Toggle language">
+               <span class="text-text-secondary font-medium uppercase transition-colors hover:text-text-accent">RU</span>
+               <span class="block h-3.5 w-0.5 rounded-full bg-divider-navigation" aria-hidden="true"></span>
+               </button>
+            </nav>
+         </nav>
+      </header>
+      <main class="flex w-full flex-col overflow-x-hidden mt-[4rem] scroll-smooth will-change-scroll sm:mt-[4.25rem]">
+         <section id="main" class="flex h-fit w-full flex-row justify-between lg:h-[42rem]">
+            <div class="hidden h-full grow bg-hero-element-left lg:block"></div>
+            <div class="container grid max-w-5xl w-full grid-cols-2 bg-[image:var(--gradient-hero-background)] pl-4 sm:pl-6 md:grid-cols-3">
+               <div class="z-20 flex flex-col justify-center gap-8 py-24 sm:gap-12 sm:py-32 md:py-40 lg:py-0">
+                  <div class="flex flex-col gap-4">
+                     <h1 class="text-nowrap text-[1.75rem] font-bold uppercase text-text-accent sm:text-[2.5rem] md:text-5xl" data-i18n="hero.name">Данил Климов</h1>
+                     <p class="text-lg font-medium uppercase tracking-tighter text-text-secondary sm:text-2xl sm:tracking-normal md:text-subtitle" lang="en">Product-Minded Frontend/Fullstack Developer</p>
+                  </div>
+                  <a href="public/files/Danil_Klimov_CV.pdf" target="_blank" rel="noopener noreferrer" class="w-fit rounded-full bg-button-cta-base px-4.5 py-2.5 text-base font-bold uppercase text-text-accent shadow-button-cta-base transition hover:bg-button-cta-hover active:bg-button-cta-active active:shadow-button-cta-active md:px-6 md:py-3 md:text-lg" data-i18n="hero.download_cv" data-i18n-attr="aria-label:hero.aria_download_cv">Скачать CV</a>
+               </div>
+               <div class="relative md:col-start-3">
+                  <img src="/images/hero-image.png" loading="lazy" aria-hidden="true" alt="just a design element" class="absolute top-0.25 z-10 h-full w-full object-fill sm:top-0.5 lg:left-1">
+                  <div class="absolute z-15 h-full w-full bg-linear-to-tl from-0% from-hero-element-right to-40%"></div>
+               </div>
             </div>
-            <p class="text-sm text-secondary dark:text-secondary-darkmode" data-i18n="contacts.email_desc">Предпочтительный канал для детальных обсуждений.</p>
-          </li>
-          <li class="flex flex-col gap-3 sm:pl-2">
-            <div class="flex flex-row items-center gap-3">
-              <img src="icons/tg-icon-sm.svg" alt="Telegram icon" class="w-4 h-4 dark:brightness-700" loading="lazy" data-i18n-attr="alt:contacts.telegram_icon_alt">
-              <a href="https://t.me/sarthriles" class="text-base text-subaccent dark:text-subaccent-darkmode hover:text-secondary dark:hover:text-secondary-darkmode transition-all duration-150 ease-in-out delay-75" rel="noopener noreferrer" data-i18n="contacts.telegram_link" data-i18n-attr="aria-label:contacts.telegram_aria">telegram <span class="font-semibold leading-none font-mono lowercase">→</span></a>
+            <div class="z-10 hidden h-full grow bg-[image:var(--gradient-hero-element-right)] lg:block"></div>
+         </section>
+         <section id="skills" class="flex w-full items-center justify-center">
+            <div class="container flex max-w-5xl flex-col gap-8 px-4 py-20 sm:gap-12 sm:px-6 lg:py-24">
+               <div class="flex flex-col gap-1.5">
+                  <h2 class="text-subtitle font-bold text-text-base" data-i18n="skills.title">Навыки</h2>
+                  <p class="text-lg font-normal text-text-tertiary" data-i18n="skills.description">Перечень моих основных навыков</p>
+               </div>
+               <ul class="grid h-fit grid-rows-4 gap-8 sm:grid-cols-2 sm:grid-rows-2 lg:grid-cols-4 lg:grid-rows-1">
+                  <li class="flex h-card-phone w-full flex-col gap-3 rounded-4xl bg-background-card p-6 shadow-card sm:h-card-base">
+                     <h3 class="text-base font-normal uppercase text-text-tertiary" lang="en">Frontend</h3>
+                     <ul class="flex flex-row flex-wrap gap-1.5 px-1 sm:flex-col sm:gap-0">
+                        <li class="text-base font-normal text-text-base" lang="en">React,</li>
+                        <li class="text-base font-normal text-text-base" lang="en">TypeScript,</li>
+                        <li class="text-base font-normal text-text-base" lang="en">Tailwind,</li>
+                        <li class="text-base font-normal text-text-base" lang="en">Performance,</li>
+                        <li class="text-base font-normal text-text-base" lang="en">Responsive Design</li>
+                     </ul>
+                  </li>
+                  <li class="flex h-card-phone w-full flex-col gap-3 rounded-4xl bg-background-card p-6 shadow-card sm:h-card-base">
+                     <h3 class="text-base font-normal uppercase text-text-tertiary" lang="en">Backend</h3>
+                     <ul class="flex flex-row flex-wrap gap-1.5 px-1 sm:flex-col sm:gap-0">
+                        <li class="text-base font-normal text-text-base" lang="en">Python,</li>
+                        <li class="text-base font-normal text-text-base" lang="en">PHP (Laravel),</li>
+                        <li class="text-base font-normal text-text-base" lang="en">SQL,</li>
+                        <li class="text-base font-normal text-text-base" lang="en">RESTful API</li>
+                     </ul>
+                  </li>
+                  <li class="flex h-card-phone w-full flex-col gap-3 rounded-4xl bg-background-card p-6 shadow-card sm:h-card-base">
+                     <h3 class="text-base font-normal uppercase text-text-tertiary" lang="en">UI/UX</h3>
+                     <ul class="flex flex-row flex-wrap gap-1.5 px-1 sm:flex-col sm:gap-0">
+                        <li class="text-base font-normal text-text-base" lang="en">Figma,</li>
+                        <li class="text-base font-normal text-text-base" lang="en">Photoshop,</li>
+                        <li class="text-base font-normal text-text-base" lang="en">Blender,</li>
+                        <li class="text-base font-normal text-text-base" lang="en">Illustrator,</li>
+                        <li class="text-base font-normal text-text-base" lang="en">Proto</li>
+                     </ul>
+                  </li>
+                  <li class="flex h-card-phone w-full flex-col gap-3 rounded-4xl bg-background-card p-6 shadow-card sm:h-card-base">
+                     <h3 class="text-base font-normal uppercase text-text-tertiary" lang="en">Method</h3>
+                     <ul class="flex list-disc flex-col flex-wrap gap-1 pl-5 pr-1">
+                        <li class="text-base font-normal text-text-base" lang="en">Git, Docker, VScode</li>
+                        <li class="text-base font-normal text-text-base" lang="en">OOP, Clean Code, SOLID</li>
+                     </ul>
+                  </li>
+               </ul>
             </div>
-            <p class="text-sm text-secondary dark:text-secondary-darkmode" data-i18n="contacts.telegram_desc">Для быстрой связи и оперативных вопросов.</p>
-          </li>
-          <li class="flex flex-col gap-3 sm:pl-2">
-            <div class="flex flex-row items-center gap-3">
-              <img src="icons/gh-icon-sm.svg" alt="GitHub icon" class="w-4 h-4 dark:brightness-700" loading="lazy" data-i18n-attr="alt:contacts.github_icon_alt">
-              <a href="https://github.com/saakivnzechad" class="text-base text-subaccent dark:text-subaccent-darkmode hover:text-secondary dark:hover:text-secondary-darkmode transition-all duration-150 ease-in-out delay-75" rel="noopener noreferrer" data-i18n="contacts.github_link" data-i18n-attr="aria-label:contacts.github_aria">Github <span class="font-semibold leading-none font-mono lowercase">→</span></a>
+         </section>
+         <section id="contacts" class="flex w-full items-center justify-center bg-background-section">
+            <div class="container flex max-w-5xl flex-col gap-8 px-4 py-20 sm:gap-12 sm:px-6 lg:py-24">
+               <div class="flex flex-col gap-1.5">
+                  <h2 class="text-subtitle font-bold text-text-base" data-i18n="contacts.title">Контакты</h2>
+                  <p class="text-lg font-normal text-text-tertiary" data-i18n="contacts.availability">Доступен с Пн-Пт, 12:00-22:00 МСК</p>
+               </div>
+               <ul class="flex flex-col gap-10">
+                  <li class="flex flex-col gap-4.5">
+                     <div class="flex flex-col gap-3">
+                        <div class="flex flex-row items-center gap-2.5">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="none" viewBox="0 0 64 52" data-i18n-attr="aria-label:contacts.email_icon_aria_label;alt:contacts.email_icon_alt">
+                              <path fill="#F0F0F0" fill-rule="evenodd" d="M56 0c4.4183 0 8 3.5817 8 8v36l-.043.8164C63.548 48.8511 60.1426 52 56 52H8c-4.4183 0-8-3.5817-8-8V8c0-4.4183 3.5817-8 8-8h48ZM8 4C5.7909 4 4 5.7909 4 8v1.8984l26.043 16.5743a3.999 3.999 0 0 0 1.9687.5195 4.0035 4.0035 0 0 0 1.9961-.5352L60 9.8984V8c0-2.2091-1.7909-4-4-4H8Z" clip-rule="evenodd" />
+                           </svg>
+                           <h3 class="text-base font-bold uppercase tracking-wide text-text-base" data-i18n="contacts.email_title">Sarthriles@Gmail.com</h3>
+                        </div>
+                        <p class="text-base font-normal text-text-secondary" data-i18n="contacts.email_desc">Предпочтительный канал для детальных обсуждений</p>
+                     </div>
+                     <a href="mailto:sarthriles@gmail.com" target="_blank" rel="noopener noreferrer" class="w-fit rounded-full bg-button-base px-4 py-2 text-base font-normal text-text-base shadow-button-general-base transition hover:bg-button-hover active:bg-button-active active:shadow-button-general-active" data-i18n="contacts.email_button" data-i18n-attr="aria-label:contacts.email_aria">Написать</a>
+                  </li>
+                  <li class="flex flex-col gap-4.5">
+                     <div class="flex flex-col gap-3">
+                        <div class="flex flex-row items-center gap-2.5">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 64 64" data-i18n-attr="aria-label:contacts.telegram_icon_aria_label;alt:contacts.telegram_icon_alt">
+                              <path fill="#F0F0F0" fill-rule="evenodd" d="M32 0c17.6731 0 32 14.3269 32 32 0 17.6731-14.3269 32-32 32C14.3269 64 0 49.6731 0 32 0 14.3269 14.3269 0 32 0Zm13.0833 19.2625c-1.2035.0212-3.0509.6663-11.9375 4.3625-3.1128 1.2948-9.3349 3.9736-18.6625 8.0375-1.5131.6019-2.3062 1.1909-2.3791 1.7667-.1387 1.1063 1.4543 1.4527 3.4583 2.1041 1.6338.5311 3.8326 1.1504 4.975 1.175 1.0362.0222 2.1941-.4024 3.4708-1.2791 8.7154-5.8832 13.2129-8.8606 13.4959-8.925.1993-.0453.4754-.0997.6625.0666.187.1663.1698.4822.15.5667-.1688.6839-8.3458 8.1234-8.8167 8.6125-1.8004 1.8699-3.8506 3.014-.6917 5.0958 2.7337 1.8015 4.3256 2.9499 7.1417 4.7959 1.7999 1.1798 3.2125 2.5793 5.0708 2.4083.8547-.0791 1.739-.8831 2.1875-3.2792 1.0601-5.6672 3.1435-17.9483 3.625-23.0083.0421-.4425-.0115-1.0086-.0541-1.2583-.0426-.2487-.1317-.6041-.4542-.8667-.3834-.3111-.9769-.3797-1.2417-.375Z" clip-rule="evenodd" />
+                           </svg>
+                           <h3 class="text-base font-bold uppercase tracking-wide text-text-base" data-i18n="contacts.telegram_title">Telegram</h3>
+                        </div>
+                        <p class="text-base font-normal text-text-secondary" data-i18n="contacts.telegram_desc">Для быстрой связи и оперативных вопросов</p>
+                     </div>
+                     <a href="https://t.me/sarthriles" target="_blank" rel="noopener noreferrer" class="w-fit rounded-full bg-button-base px-4 py-2 text-base font-normal text-text-base shadow-button-general-base transition hover:bg-button-hover active:bg-button-active active:shadow-button-general-active" data-i18n="contacts.telegram_button" data-i18n-attr="aria-label:contacts.telegram_aria">Написать</a>
+                  </li>
+                  <li class="flex flex-col gap-4.5">
+                     <div class="flex flex-col gap-3">
+                        <div class="flex flex-row items-center gap-2.5">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 64 64" data-i18n-attr="aria-label:contacts.github_icon_aria_label;alt:contacts.github_icon_alt">
+                              <path fill="#F0F0F0" fill-rule="evenodd" d="M32.0265 0C14.3167 0 0 14.6666 0 32.8112c0 14.5039 9.1732 26.7812 21.8988 31.1265 1.591.3267 2.1738-.706 2.1738-1.5746 0-.7607-.0524-3.368-.0524-6.0847-8.909 1.956-10.7642-3.9113-10.7642-3.9113-1.4318-3.8026-3.5531-4.78-3.5531-4.78-2.916-2.01.2124-2.01.2124-2.01 3.2345.2174 4.9317 3.368 4.9317 3.368 2.8628 4.9973 7.476 3.5853 9.3318 2.716.2649-2.1186 1.1138-3.5853 2.0152-4.4-7.1056-.7606-14.5815-3.5853-14.5815-16.1886 0-3.5853 1.2718-6.5186 3.287-8.7999-.318-.8147-1.4318-4.1833.3186-8.692 0 0 2.7041-.8693 8.8014 3.368a30.3124 30.3124 0 0 1 8.007-1.0867c2.7041 0 5.4608.3807 8.0063 1.0867 6.0979-4.2373 8.8021-3.368 8.8021-3.368 1.7503 4.5087.6359 7.8773.3179 8.692 2.0683 2.2813 3.2877 5.2146 3.2877 8.7999 0 12.6033-7.476 15.3733-14.6347 16.1886 1.1669 1.032 2.1739 2.9874 2.1739 6.084 0 4.4-.0525 7.9313-.0525 9.0173 0 .8693.5835 1.902 2.1738 1.576 12.7257-4.3467 21.8989-16.6233 21.8989-31.1272C64.0523 14.6666 49.6832 0 32.0265 0Z" clip-rule="evenodd" />
+                           </svg>
+                           <h3 class="text-base font-bold uppercase tracking-wide text-text-base" data-i18n="contacts.github_title">GitHub</h3>
+                        </div>
+                        <p class="text-base font-normal text-text-secondary" data-i18n="contacts.github_desc">Здесь вы найдете примеры моих работ и решений</p>
+                     </div>
+                     <a href="https://github.com/saakivnzechad" target="_blank" rel="noopener noreferrer" class="w-fit rounded-full bg-button-base px-4 py-2 text-base font-normal text-text-base shadow-button-general-base transition hover:bg-button-hover active:bg-button-active active:shadow-button-general-active" data-i18n="contacts.github_button" data-i18n-attr="aria-label:contacts.github_aria">Открыть</a>
+                  </li>
+               </ul>
             </div>
-            <p class="text-sm text-secondary dark:text-secondary-darkmode" data-i18n="contacts.github_desc">Здесь вы найдете примеры моих работ и решений.</p>
-          </li>
-          <li class="flex flex-col gap-3 sm:pl-2">
-            <div class="flex flex-row items-center gap-3">
-              <img src="icons/vk-icon-sm.svg" alt="VK icon" class="w-4 h-4 dark:brightness-700" loading="lazy" data-i18n-attr="alt:contacts.vk_icon_alt">
-              <a href="https://vk.com/sarthriles" class="text-base text-subaccent dark:text-subaccent-darkmode hover:text-secondary dark:hover:text-secondary-darkmode transition-all duration-150 ease-in-out delay-75" rel="noopener noreferrer" data-i18n="contacts.vk_link" data-i18n-attr="aria-label:contacts.vk_aria">Vkontakte <span class="font-semibold leading-none font-mono lowercase">→</span></a>
+         </section>
+         <section id="projects" class="flex w-full items-center justify-center">
+            <div class="container flex max-w-5xl flex-col gap-8 px-4 py-20 sm:gap-12 sm:px-6 lg:py-24">
+               <div class="flex flex-col gap-1.5">
+                  <h2 class="text-subtitle font-bold text-text-base" data-i18n="projects.title">Проекты</h2>
+                  <p class="text-lg font-normal text-text-tertiary" data-i18n="projects.description">Последние актуальные проекты</p>
+               </div>
+               <ul class="flex flex-col gap-10">
+                  <li class="flex flex-col gap-4.5">
+                     <div class="flex flex-col gap-3">
+                        <h3 class="text-base font-bold uppercase tracking-wide text-text-base" data-i18n="projects.ecommerce.title">E-Commerce SPA [Риса Много]</h3>
+                        <p class="text-base font-normal text-text-secondary" data-i18n="projects.ecommerce.desc">Full-Stack SPA приложение (React, PHP) с комплексной серверной логикой и адаптивным дизайном</p>
+                     </div>
+                     <a href="https://github.com/saakivnzechad/ecommerce-portfolio-project" target="_blank" rel="noopener noreferrer" class="flex w-fit flex-row items-center gap-2.5 rounded-full bg-button-base px-4 py-2 text-base font-normal text-text-base shadow-button-general-base transition hover:bg-button-hover active:bg-button-active active:shadow-button-general-active" data-i18n-attr="aria-label:projects.ecommerce.aria_label_github">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 64 64" data-i18n-attr="aria-label:projects.github_icon_aria_label;alt:projects.github_icon_alt">
+                           <path fill="#F0F0F0" fill-rule="evenodd" d="M32.0265 0C14.3167 0 0 14.6666 0 32.8112c0 14.5039 9.1732 26.7812 21.8988 31.1265 1.591.3267 2.1738-.706 2.1738-1.5746 0-.7607-.0524-3.368-.0524-6.0847-8.909 1.956-10.7642-3.9113-10.7642-3.9113-1.4318-3.8026-3.5531-4.78-3.5531-4.78-2.916-2.01.2124-2.01.2124-2.01 3.2345.2174 4.9317 3.368 4.9317 3.368 2.8628 4.9973 7.476 3.5853 9.3318 2.716.2649-2.1186 1.1138-3.5853 2.0152-4.4-7.1056-.7606-14.5815-3.5853-14.5815-16.1886 0-3.5853 1.2718-6.5186 3.287-8.7999-.318-.8147-1.4318-4.1833.3186-8.692 0 0 2.7041-.8693 8.8014 3.368a30.3124 30.3124 0 0 1 8.007-1.0867c2.7041 0 5.4608.3807 8.0063 1.0867 6.0979-4.2373 8.8021-3.368 8.8021-3.368 1.7503 4.5087.6359 7.8773.3179 8.692 2.0683 2.2813 3.2877 5.2146 3.2877 8.7999 0 12.6033-7.476 15.3733-14.6347 16.1886 1.1669 1.032 2.1739 2.9874 2.1739 6.084 0 4.4-.0525 7.9313-.0525 9.0173 0 .8693.5835 1.902 2.1738 1.576 12.7257-4.3467 21.8989-16.6233 21.8989-31.1272C64.0523 14.6666 49.6832 0 32.0265 0Z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-base font-normal text-text-base" data-i18n="projects.github_link_text">GitHub</span>
+                     </a>
+                  </li>
+                  <li class="flex flex-col gap-4.5">
+                     <div class="flex flex-col gap-3">
+                        <h3 class="text-base font-bold uppercase tracking-wide text-text-base" data-i18n="projects.portfolio.title">Динамическое Портфолио</h3>
+                        <p class="text-base font-normal text-text-secondary" data-i18n="projects.portfolio.desc">Адаптивное SPA Client-Only портфолио (TS): Динамическая архитектура, кастомный роутинг и локализация</p>
+                     </div>
+                     <a href="https://github.com/saakivnzechad/personal-portfolio-archived" target="_blank" rel="noopener noreferrer" class="flex w-fit flex-row items-center gap-2.5 rounded-full bg-button-base px-4 py-2 text-base font-normal text-text-base shadow-button-general-base transition hover:bg-button-hover active:bg-button-active active:shadow-button-general-active" data-i18n-attr="aria-label:projects.portfolio.aria_label_github">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 64 64" data-i18n-attr="aria-label:projects.github_icon_aria_label;alt:projects.github_icon_alt">
+                           <path fill="#F0F0F0" fill-rule="evenodd" d="M32.0265 0C14.3167 0 0 14.6666 0 32.8112c0 14.5039 9.1732 26.7812 21.8988 31.1265 1.591.3267 2.1738-.706 2.1738-1.5746 0-.7607-.0524-3.368-.0524-6.0847-8.909 1.956-10.7642-3.9113-10.7642-3.9113-1.4318-3.8026-3.5531-4.78-3.5531-4.78-2.916-2.01.2124-2.01.2124-2.01 3.2345.2174 4.9317 3.368 4.9317 3.368 2.8628 4.9973 7.476 3.5853 9.3318 2.716.2649-2.1186 1.1138-3.5853 2.0152-4.4-7.1056-.7606-14.5815-3.5853-14.5815-16.1886 0-3.5853 1.2718-6.5186 3.287-8.7999-.318-.8147-1.4318-4.1833.3186-8.692 0 0 2.7041-.8693 8.8014 3.368a30.3124 30.3124 0 0 1 8.007-1.0867c2.7041 0 5.4608.3807 8.0063 1.0867 6.0979-4.2373 8.8021-3.368 8.8021-3.368 1.7503 4.5087.6359 7.8773.3179 8.692 2.0683 2.2813 3.2877 5.2146 3.2877 8.7999 0 12.6033-7.476 15.3733-14.6347 16.1886 1.1669 1.032 2.1739 2.9874 2.1739 6.084 0 4.4-.0525 7.9313-.0525 9.0173 0 .8693.5835 1.902 2.1738 1.576 12.7257-4.3467 21.8989-16.6233 21.8989-31.1272C64.0523 14.6666 49.6832 0 32.0265 0Z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-base font-normal text-text-base" data-i18n="projects.github_link_text">GitHub</span>
+                     </a>
+                  </li>
+                  <li class="flex flex-col gap-4.5">
+                     <div class="flex flex-col gap-3">
+                        <h3 class="text-base font-bold uppercase tracking-wide text-text-base" data-i18n="projects.telegram_bot.title">Paid Content Telegram Bot</h3>
+                        <p class="text-base font-normal text-text-secondary" data-i18n="projects.telegram_bot.desc">Telegram-бот для автопродаж: Интеграция Yoomoney API, Безопасные платежи, FSM</p>
+                     </div>
+                     <a href="https://github.com/saakivnzechad/aiogram-yoomoney-bot" target="_blank" rel="noopener noreferrer" class="flex w-fit flex-row items-center gap-2.5 rounded-full bg-button-base px-4 py-2 text-base font-normal text-text-base shadow-button-general-base transition hover:bg-button-hover active:bg-button-active active:shadow-button-general-active" data-i18n-attr="aria-label:projects.telegram_bot.aria_label_github">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 64 64" data-i18n-attr="aria-label:projects.github_icon_aria_label;alt:projects.github_icon_alt">
+                           <path fill="#F0F0F0" fill-rule="evenodd" d="M32.0265 0C14.3167 0 0 14.6666 0 32.8112c0 14.5039 9.1732 26.7812 21.8988 31.1265 1.591.3267 2.1738-.706 2.1738-1.5746 0-.7607-.0524-3.368-.0524-6.0847-8.909 1.956-10.7642-3.9113-10.7642-3.9113-1.4318-3.8026-3.5531-4.78-3.5531-4.78-2.916-2.01.2124-2.01.2124-2.01 3.2345.2174 4.9317 3.368 4.9317 3.368 2.8628 4.9973 7.476 3.5853 9.3318 2.716.2649-2.1186 1.1138-3.5853 2.0152-4.4-7.1056-.7606-14.5815-3.5853-14.5815-16.1886 0-3.5853 1.2718-6.5186 3.287-8.7999-.318-.8147-1.4318-4.1833.3186-8.692 0 0 2.7041-.8693 8.8014 3.368a30.3124 30.3124 0 0 1 8.007-1.0867c2.7041 0 5.4608.3807 8.0063 1.0867 6.0979-4.2373 8.8021-3.368 8.8021-3.368 1.7503 4.5087.6359 7.8773.3179 8.692 2.0683 2.2813 3.2877 5.2146 3.2877 8.7999 0 12.6033-7.476 15.3733-14.6347 16.1886 1.1669 1.032 2.1739 2.9874 2.1739 6.084 0 4.4-.0525 7.9313-.0525 9.0173 0 .8693.5835 1.902 2.1738 1.576 12.7257-4.3467 21.8989-16.6233 21.8989-31.1272C64.0523 14.6666 49.6832 0 32.0265 0Z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-base font-normal text-text-base" data-i18n="projects.github_link_text">GitHub</span>
+                     </a>
+                  </li>
+               </ul>
             </div>
-            <p class="text-sm text-secondary dark:text-secondary-darkmode" data-i18n="contacts.vk_desc">Используется для персонального общения.</p>
-          </li>
-        </ul>
-      </section>
-
-      <section id="intro-section-desktop" class="hidden xl:flex flex-col gap-7 px-12 py-8 bg-background dark:bg-background-darkmode shadow-base dark:shadow-base-darkmode outline-1 outline-accent dark:outline-accent-darkmode xl:h-[var(--base-height)] xl:justify-center 2xl:p-8 2xl:h-[var(--huge-height)] 2xl:gap-0 2xl:justify-between">
-        <div class="flex flex-col gap-1.5">
-          <h1 class="font-normal text-4xl text-accent dark:text-accent-darkmode text-center" data-i18n="hero.name">Danil Klimov</h1>
-          <h2 class="font-normal text-lg text-subaccent dark:text-subaccent-darkmode text-center" data-i18n="hero.role">product-minded frontend/<br>fullstack developer</h2>
-        </div>
-        <ul class="flex flex-col gap-3 items-center">
-          <li class="flex flex-col gap-1 items-center">
-            <h3 class="text-xs font-light text-subaccent dark:text-subaccent-darkmode" data-i18n="skills.frontend_title">Frontend</h3>
-            <p class="text-base text-subaccent dark:text-subaccent-darkmode" data-i18n="skills.frontend_list">react, ts, tailwind, perf, resp</p>
-          </li>
-          <li class="flex flex-col gap-1 items-center">
-            <h3 class="text-xs font-light text-subaccent dark:text-subaccent-darkmode" data-i18n="skills.backend_title">Backend</h3>
-            <p class="text-base text-subaccent dark:text-subaccent-darkmode" data-i18n="skills.backend_list">Python, php, sql, api</p>
-          </li>
-          <li class="flex flex-col gap-1 items-center">
-            <h3 class="text-xs font-light text-subaccent dark:text-subaccent-darkmode" data-i18n="skills.uxui_title">Ux/Ui</h3>
-            <p class="text-base text-subaccent dark:text-subaccent-darkmode" data-i18n="skills.uxui_list">figma, proto, prod-minded</p>
-          </li>
-          <li class="flex flex-col gap-1 items-center">
-            <h3 class="text-xs font-light text-subaccent dark:text-subaccent-darkmode" data-i18n="skills.method_title">Method</h3>
-            <p class="text-base text-subaccent dark:text-subaccent-darkmode" data-i18n="skills.method_list">git, oop, clean code</p>
-          </li>
-        </ul>
-      </section>
-
-      <section id="projects-section" class="w-full flex flex-col gap-6 xl:max-w-[var(--base-width)] xl:h-[var(--base-height)] 2xl:h-[var(--huge-height)] 2xl:max-w-[var(--huge-width)]">
-        <h2 class="text-lg text-accent dark:text-accent-darkmode" data-i18n="projects.title">Проекты</h2>
-        <ul class="flex flex-col gap-4.5 xl:gap-0 xl:h-full xl:justify-between">
-          <li class="flex flex-col gap-3 sm:pl-2">
-            <h3 class="text-base text-subaccent dark:text-subaccent-darkmode" data-i18n="projects.ecommerce.title">E-commerce SPA</h3>
-            <p class="text-sm text-secondary dark:text-secondary-darkmode" data-i18n="projects.ecommerce.desc">Full-stack E-commerce SPA (React, PHP API) с комплексной серверной логикой и адаптивным дизайном.</p>
-            <a href="https://github.com/saakivnzechad/ecommerce-portfolio-project" class="group flex flex-row items-center gap-2" rel="noopener noreferrer" data-i18n-attr="aria-label:projects.ecommerce.aria_label_github">
-              <img src="icons/gh-icon-md.svg" alt="GitHub project icon" class="w-4.5 h-4.5 dark:brightness-700" loading="lazy" data-i18n-attr="alt:projects.github_icon_alt"> <p class="text-sm text-accent dark:text-accent-darkmode group-hover:text-secondary dark:group-hover:text-secondary-darkmode transition-all duration-150 ease-in-out delay-75" data-i18n="projects.github_link_text">github <span class="font-semibold leading-none font-mono lowercase">→</span></p> </a>
-          </li>
-          <li class="flex flex-col gap-3 sm:pl-2">
-            <h3 class="text-base text-subaccent dark:text-subaccent-darkmode" data-i18n="projects.portfolio.title">Dynamic Client Portfolio</h3>
-            <p class="text-sm text-secondary dark:text-secondary-darkmode" data-i18n="projects.portfolio.desc">Адаптивное SPA-портфолио (TypeScript): динамическая архитектура, кастомный роутинг и локализация.</p>
-            <a href="https://github.com/saakivnzechad/personal-portfolio-archived" class="group flex flex-row items-center gap-2" rel="noopener noreferrer" data-i18n-attr="aria-label:projects.portfolio.aria_label_github">
-              <img src="icons/gh-icon-md.svg" alt="GitHub project icon" class="w-4.5 h-4.5 dark:brightness-700" loading="lazy" data-i18n-attr="alt:projects.github_icon_alt"> <p class="text-sm text-accent dark:text-accent-darkmode group-hover:text-secondary dark:group-hover:text-secondary-darkmode transition-all duration-150 ease-in-out delay-75" data-i18n="projects.github_link_text">github <span class="font-semibold leading-none font-mono lowercase">→</span></p> </a>
-          </li>
-          <li class="flex flex-col gap-3 sm:pl-2">
-            <h3 class="text-base text-subaccent dark:text-subaccent-darkmode" data-i18n="projects.telegram_bot.title">Telegram Content Delivery Bot</h3>
-            <p class="text-sm text-secondary dark:text-secondary-darkmode" data-i18n="projects.telegram_bot.desc">Telegram-бот для автопродаж: интеграция YooMoney API, безопасные платежи, FSM.</p>
-            <a href="https://github.com/saakivnzechad/aiogram-yoomoney-bot" class="group flex flex-row items-center gap-2" rel="noopener noreferrer" data-i18n-attr="aria-label:projects.telegram_bot.aria_label_github">
-              <img src="icons/gh-icon-md.svg" alt="GitHub project icon" class="w-4.5 h-4.5 dark:brightness-700" loading="lazy" data-i18n-attr="alt:projects.github_icon_alt"> <p class="text-sm text-accent dark:text-accent-darkmode group-hover:text-secondary dark:group-hover:text-secondary-darkmode transition-all duration-150 ease-in-out delay-75" data-i18n="projects.github_link_text">github <span class="font-semibold leading-none font-mono lowercase">→</span></p> </a>
-          </li>
-        </ul>
-      </section>
-    </div>
-  </main>
-
-  <footer id="footer-section" class="p-4 sm:px-6 sm:py-4 flex flex-col sm:flex-row-reverse sm:items-end w-full gap-3 border-t border-t-accent dark:border-t-accent-darkmode bg-background dark:bg-background-darkmode fixed bottom-0 shadow-footer dark:shadow-footer-darkmode z-10 xl:static xl:bottom-auto xl:justify-between xl:h-16 xl:pb-1 xl:px-4 xl:border-none xl:!shadow-none">
-    <div class="flex flex-row gap-4 xl:gap-6"> <button id="lang-toggle" class="group flex flex-row gap-1 items-center text-sm uppercase cursor-pointer"> <span class="text-secondary dark:text-secondary-darkmode group-hover:text-accent dark:group-hover:text-accent-darkmode transition-all duration-150 ease-in-out delay-75" data-i18n="footer.lang_prefix">lang:</span>
-        <span class="text-accent dark:text-accent-darkmode" data-i18n="footer.lang_current">ru</span> </button>
-      <button id="theme-toggle" class="group flex flex-row gap-1 items-center text-sm uppercase cursor-pointer">
-        <span class="text-secondary dark:text-secondary-darkmode group-hover:text-accent dark:group-hover:text-accent-darkmode transition-all duration-150 ease-in-out delay-75" data-i18n="footer.theme_prefix">theme:</span>
-        <span class="text-accent dark:text-accent-darkmode" >light</span>
-      </button>
-    </div>
-    <div class="flex flex-col w-full gap-2 justify-end xl:flex-row xl:gap-6 xl:justify-start">
-      <p class="text-xs text-secondary dark:text-secondary-darkmode xl:text-sm" >designed and developed by <span class="block md:inline">sarthriles/sakkivnzechad 2025©</span></p>
-      <p class="text-xs text-secondary dark:text-secondary-darkmode xl:text-sm" >Created as a dedicated personal showcase.</p>
-    </div>
-  </footer>
-  <script src="src/main.ts" type="module"></script>
-</body>
+         </section>
+      </main>
+      <footer class="mt-4 flex w-full items-center justify-center bg-[image:var(--gradient-header-footer)] sm:mt-8 md:mt-12 lg:mt-16">
+         <div class="container max-w-5xl flex-col gap-2.5 px-6 py-8">
+            <p class="text-sm font-normal text-text-tertiary" lang="en">Designed and Developed by sarthriles/saakivnzechad 2025©</p>
+            <p class="text-sm font-normal text-text-tertiary" lang="en">Created as a dedicated personal showcase.</p>
+         </div>
+      </footer>
+      <script src="src/main.ts" type="module"></script>
+   </body>
 </html>
