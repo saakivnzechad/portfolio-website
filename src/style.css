@@ -34,9 +34,9 @@
     --color-button-active: #34475A;
 
     /* --- Button Colors (Call-to-Action / CTA) --- */
-    --color-button-cta-base: #4C85C2;
-    --color-button-cta-hover: #709DCE;
-    --color-button-cta-active: #396491;
+    --color-button-cta-base: #4377AD;
+    --color-button-cta-hover: #6992BD;
+    --color-button-cta-active: #365F8A;
 
     /* --- Dividers --- */
     --color-divider-navigation: #465F78;
@@ -54,6 +54,7 @@
     --shadow-button-cta-base: 0 1px 2px rgba(0, 0, 0, 0.15);
     --shadow-button-cta-active: 0 0px 1px rgba(0, 0, 0, 0.15);
     --shadow-card: 0 0px 1px rgba(0, 0, 0, 0.10);
+    --shadow-card-hover: 0 0px 2px rgba(0, 0, 0, 0.15);
     --shadow-button-general-base: 0 0px 1px rgba(0, 0, 0, 0.10);
     --shadow-button-general-active: 0 0px 0px rgba(0, 0, 0, 0.05);
     --shadow-header: 0 1px 2px rgba(0, 0, 0, 0.15);

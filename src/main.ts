@@ -10,10 +10,12 @@ import LanguageManager from './languageManager';
 class MobileMenuManager {
     private readonly menu: HTMLElement;
     private readonly button: HTMLElement;
+    private readonly mainContent: HTMLElement;
 
-    constructor(menuElement: HTMLElement, buttonElement: HTMLElement) {
+    constructor(menuElement: HTMLElement, buttonElement: HTMLElement, mainContentElement: HTMLElement) {
         this.menu = menuElement;
         this.button = buttonElement;
+        this.mainContent = mainContentElement;
     }
 
     public init(): void {
@@ -33,6 +35,7 @@ class MobileMenuManager {
         void this.menu.offsetWidth;
         this.menu.classList.remove('translate-y-full');
         this.menu.classList.add('translate-y-0');
+        this.mainContent.classList.add('pointer-events-none');
     }
 
     public close(): void {
@@ -42,6 +45,7 @@ class MobileMenuManager {
         this.menu.classList.remove('translate-y-0');
         this.menu.addEventListener('transitionend', () => {
             this.menu.classList.add('hidden');
+            this.mainContent.classList.remove('pointer-events-none');
         }, { once: true });
     }
 }
@@ -75,8 +79,9 @@ class ScrollManager {
 document.addEventListener('DOMContentLoaded', async () => {
     const hamburgerButton = document.getElementById('hamburger-button');
     const mobileMenuElement = document.getElementById('mobile-menu');
+    const mainContentElement = document.querySelector('main');
 
-    if (!hamburgerButton || !mobileMenuElement) {
+    if (!hamburgerButton || !mobileMenuElement || !mainContentElement) {
         console.error('Core UI elements not found. App cannot initialize.');
         return;
     }
@@ -88,7 +93,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         mobileLanguageToggleButtonSelector: '#lang-toggle-mobile',
     });
 
-    const mobileMenuManager = new MobileMenuManager(mobileMenuElement, hamburgerButton);
+    const mobileMenuManager = new MobileMenuManager(mobileMenuElement, hamburgerButton, mainContentElement);
     const scrollManager = new ScrollManager();
 
     mobileMenuManager.init();
