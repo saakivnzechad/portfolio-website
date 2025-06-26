@@ -43,12 +43,7 @@
 
     /* --- Gradients --- */
     --gradient-header-footer: linear-gradient(to right, #2D3A44 0%, #222D36 100%);
-    --gradient-hero-background: linear-gradient(to right, #3A4E63 0%, #324253 90%);
-
-    /* --- Hero Section Specific Gradients & Colors --- */
-    --gradient-hero-element-right: linear-gradient(to bottom, #293847 0%, #2D3C4C 75%);
-    --color-hero-element-left: #3A4E63;
-    --color-hero-element-right: #2D3C4C;
+    --gradient-hero-background: linear-gradient(to right, #3A4E63 10%, #324253 90%);
 
     /* --- Shadows --- */
     --shadow-button-cta-base: 0 1px 2px rgba(0, 0, 0, 0.15);
