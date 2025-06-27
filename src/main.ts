@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     const languageManager = new LanguageManager({
-        localesPath: '/portfolio-website/locales',
+        localesPath: 'locales',
         defaultLanguage: 'en',
         languageToggleButtonSelector: '#lang-toggle',
         mobileLanguageToggleButtonSelector: '#lang-toggle-mobile',
